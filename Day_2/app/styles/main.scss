@@ -38,17 +38,44 @@ body {
 .menu-icon{
   height: 60px;
   width: 100px;
-}
 
-.bar{
-  display: block;
-  position: relative;
-  width: 100px;
-  height: 10px;
-  margin-bottom: 15px;
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 0 0 13px 0 rgba(0,0,0,0.4);
+  .bar{
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 10px;
+    margin-bottom: 15px;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0 0 13px 0 rgba(0,0,0,0.4);
+  }
+
+  .bar1 {
+    animation: animate-line-1-rev .7s forwards;
+  }
+
+  .bar2 {
+    animation: animate-line-2-rev .7s forwards;
+  }
+
+  .bar3 {
+    animation: animate-line-3-rev .7s forwards;
+  }
+
+&.active {
+
+    .bar1 {
+      animation: animate-line-1 .7s forwards;
+    }
+    .bar2 {
+      animation: fadeOut .7s forwards;
+    }
+    .bar3 {
+      animation: animate-line-3 .7s forwards;
+    }
+  }
+
+
 }
 
 
@@ -68,11 +95,6 @@ body {
   }
 }
 
-.bar1 {
-  animation-name: animate-line-1;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
 
 @keyframes animate-line-3 {
   0% {
@@ -90,24 +112,59 @@ body {
   }
 }
 
-.bar3 {
-  animation-name: animate-line-3;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
 
 @keyframes fadeOut {
    0% {opacity: 1;}
    100% {opacity: 0;} 
 } 
 
-.bar2 {
-  animation-name: fadeOut;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-}
+
 
 .no-animation {
     -webkit-animation: none !important;
           animation: none !important; 
+}
+
+
+@keyframes animate-line-1-rev {
+  0% {
+    top:25px;
+    transform: rotate(45deg);
+  }
+  50% {
+    top: 25px;
+    transform:  rotate(0deg);
+  }
+
+  100% {
+    top: 0px;
+    transform:  rotate(0deg);
+  }
+}
+
+@keyframes animate-line-2-rev {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes animate-line-3-rev {
+  0% {
+    bottom: 25px;
+    transform:  rotate(135deg);
+  }
+  50% {
+    bottom: 25px;
+    transform:  rotate(0deg);
+  }
+
+  100% {
+    bottom: 0px;
+    transform: rotate(0deg);
+  }
 }
