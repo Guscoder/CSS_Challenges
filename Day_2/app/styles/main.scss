@@ -1,0 +1,113 @@
+// bower:scss
+// endbower
+
+
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame {
+  background: #37A577;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+}
+
+.menu-icon{
+  height: 60px;
+  width: 100px;
+}
+
+.bar{
+  display: block;
+  position: relative;
+  width: 100px;
+  height: 10px;
+  margin-bottom: 15px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 0 13px 0 rgba(0,0,0,0.4);
+}
+
+
+@keyframes animate-line-1 {
+  0% {
+    top: 0px;
+    transform: rotate(0deg);
+  }
+  50% {
+    top: 25px;
+    transform: rotate(0);
+  }
+
+  100% {
+    top: 25px;
+    transform: rotate(45deg);
+  }
+}
+
+.bar1 {
+  animation-name: animate-line-1;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-line-3 {
+  0% {
+    bottom: 0px;
+    transform: rotate(0deg);
+  }
+  50% {
+    bottom: 25px;
+    transform: rotate(0);
+  }
+
+  100% {
+    bottom: 25px;
+    transform: rotate(135deg);
+  }
+}
+
+.bar3 {
+  animation-name: animate-line-3;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;} 
+} 
+
+.bar2 {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.no-animation {
+    -webkit-animation: none !important;
+          animation: none !important; 
+}
