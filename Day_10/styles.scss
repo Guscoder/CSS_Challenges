@@ -1,0 +1,81 @@
+@mixin dottedBorder($color: #8f8f8f, $orientation: horizontal, $position: top, $spacing: 5px, $size: 1px) {
+  background-position: $position;
+  @if $orientation == horizontal {
+    background-image: linear-gradient(to right, $color $size/$spacing * 100%, rgba(255,255,255,0) 0%);
+    background-size: $spacing $size;
+    background-repeat: repeat-x;
+  }
+  @else {
+    background-image: linear-gradient($color $size/$spacing * 100%, rgba(255,255,255,0) 0%);
+    background-size: $size $spacing;
+    background-repeat: repeat-y;
+  }
+  .ie9 & {
+    border-#{$position}:1px dotted $color;      
+  }
+}
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 1px 2px 10px 0px rgba(0,0,0,0.3);
+    background: #4C4C4C;
+    color: #fff;
+  }
+  
+  .center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    .outer-circle{
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: #242424;
+      border: 5px solid #3A3A3A;
+      
+      
+      .border-circle {
+        position: absolute;
+
+        width: 190px;
+        height: 190px;
+        clip-path: circle(50% at 50% 50%);
+        background: #242424;
+        border: 3px solid red;
+      }
+    } 
+  }
+
+  svg{
+    width: 210px;
+    height: 210px;
+  }
+  circle {
+    fill: transparent;
+    stroke:#fff;
+    stroke-width: 1;
+  }
+
+  .dotted {
+    stroke-dasharray: 0.1, 8;
+    stroke-linecap: round;
+  }
+  .dot-circle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: transparent;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+  }
+  

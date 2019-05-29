@@ -1,0 +1,67 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  -webkit-box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 2px 10px 0px rgba(0, 0, 0, 0.3);
+  background: #4C4C4C;
+  color: #fff;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.center .outer-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: #242424;
+  border: 5px solid #3A3A3A;
+}
+
+.center .outer-circle .border-circle {
+  position: absolute;
+  width: 190px;
+  height: 190px;
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+  background: #242424;
+  border: 3px solid red;
+}
+
+svg {
+  width: 210px;
+  height: 210px;
+}
+
+circle {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 1;
+}
+
+.dotted {
+  stroke-dasharray: 0.1, 8;
+  stroke-linecap: round;
+}
+
+.dot-circle {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: transparent;
+  font-weight: bold;
+  text-align: center;
+  line-height: 100px;
+}
+/*# sourceMappingURL=styles.css.map */
